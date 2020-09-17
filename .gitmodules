@@ -1,0 +1,12 @@
+[submodule "iam-service"]
+	path = iam-service
+	url = :/iam-service
+[submodule "onboarding-service"]
+	path = onboarding-service
+	url = :/onboarding-service
+[submodule "os"]
+	path = os
+	url = :/os
+[submodule "ut"]
+	path = ut
+	url = :/ut
