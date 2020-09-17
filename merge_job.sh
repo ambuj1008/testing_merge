@@ -46,7 +46,7 @@ for SUB_MODULE in $SUB_MODULES; do
 
 	#Commit
 	COMMIT_MSG=$(git show dev --pretty=%B | cut -d '"' -f2)
-	if [ $COMMIT_MSG != '' ]; then
+	if [[ $COMMIT_MSG != '' ]]; then
 	echo "Committing merge to origin/master"
 	git commit --amend -m "$COMMIT_MSG" || exit 1
 	else
