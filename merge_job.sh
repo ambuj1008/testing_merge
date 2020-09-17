@@ -33,28 +33,7 @@ for SUB_MODULE in $SUB_MODULES; do
 	git stash || exit 1
 	git checkout origin/master || exit 1
 	git fetch origin || exit 1
-	git rebase tags/${RELEASE_TAG} || exit 1
-
-	#Merge
-	git fetch --tags origin || exit 1
-	git merge --ff-only ${RELEASE_TAG} || exit 1
-	echo "Git log after merge:"
-	git log -n 5 || exit 1
-
-	#Pull
-	git pull origin master || exit 1
-
-	#Commit
-	COMMIT_MSG=$(git show dev --pretty=%B | cut -d '"' -f2)
-	if [[ $COMMIT_MSG != '' ]]; then
-	echo "Committing merge to origin/master"
-	git commit --amend -m "$COMMIT_MSG" || exit 1
-	else
-	echo "No commit message found";
-	exit 1
-	fi
-	#Push
-	git push origin HEAD:master || exit 1
+	#git rebase tags/${RELEASE_TAG} || exit 1
 	cd ..
 	fi
 done
