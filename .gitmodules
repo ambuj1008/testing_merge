@@ -1,12 +1,12 @@
 [submodule "iam-service"]
 	path = iam-service
-	url = :/iam-service
+	url = https://github.com/ambuj1008/iam-service.git
 [submodule "onboarding-service"]
 	path = onboarding-service
-	url = :/onboarding-service
+	url = https://github.com/ambuj1008/onboarding-service.git
 [submodule "os"]
 	path = os
-	url = :/os
+	url = https://github.com/ambuj1008/os.git
 [submodule "ut"]
 	path = ut
-	url = :/ut
+	url = https://github.com/ambuj1008/ut.git
