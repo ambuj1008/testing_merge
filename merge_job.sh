@@ -21,7 +21,7 @@ DMIAMSERVICE="dm-iam-service";
 DMONBOARDING="dm-onboarding-service";
 
 #Building Submodule List
-SUB_MODULES=$(git config .gitmodules --get-regexp path | awk '{ print $2 }')
+SUB_MODULES=$(git config --file .gitmodules --get-regexp path | awk '{ print $2 }')
 
 git submodule sync && git submodule update --init --recursive
 
