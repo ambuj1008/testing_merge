@@ -79,8 +79,8 @@ function gitCommandToMergeCode() {
 
 gitCommandToMergeCode
 
-DMIAMSERVICE="dm-iam-service"
-DMONBOARDING="dm-onboarding-service"
+DMIAMSERVICE="iam-service"
+DMONBOARDING="onboarding-service"
 
 for SUB_MODULE in $SUB_MODULES; do
     if [ "$SUB_MODULE" != "$DMIAMSERVICE" ] && [ "$SUB_MODULE" != "$DMONBOARDING" ]; then
