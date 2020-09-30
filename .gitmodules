@@ -1,7 +1,7 @@
-[submodule "iam-service"]
+[submodule "dm-iam-service"]
 	path = iam-service
 	url = https://github.com/ambuj1008/iam-service.git
-[submodule "onboarding-service"]
+[submodule "dm-onboarding-service"]
 	path = onboarding-service
 	url = https://github.com/ambuj1008/onboarding-service.git
 [submodule "os"]

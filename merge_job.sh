@@ -1,24 +1,24 @@
 #!/bin/bash
 
-while [[ $# -gt 1 ]]; do
-    key="$1"
-    case $key in
-    -d | --tag)
-        RELEASE_TAG="$2"
-        shift
-        ;;
-    *) ;;
-    esac
-    shift
-done
+#while [[ $# -gt 1 ]]; do
+#    key="$1"
+#    case $key in
+#    -d | --tag)
+#        RELEASE_TAG="$2"
+#        shift
+#        ;;
+#    *) ;;
+#    esac
+#    shift
+#done
 
-if [[ -z $RELEASE_TAG ]]; then
-    echo "RELEASE_TAG not provided"
-	exit 1
-fi
+#if [[ -z $RELEASE_TAG ]]; then
+#    echo "RELEASE_TAG not provided"
+#	exit 1
+#fi
 
-DMIAMSERVICE="iam-service";
-DMONBOARDING="onboarding-service";
+DMIAMSERVICE="dm-iam-service";
+DMONBOARDING="dm-onboarding-service";
 
 #Building Submodule List
 SUB_MODULES=$(git config --file .gitmodules --get-regexp path | awk '{ print $2 }')
@@ -42,7 +42,7 @@ function gitCommandToMergeCode()
 	git pull origin master || exit 1
 	
 	#Commit
-	COMMIT_MSG=$(git show dev --pretty=%B | cut -d '"' -f2)
+	COMMIT_MSG=$(git show ${RELEASE_TAG} --pretty=%B | cut -d '"' -f2)
 	if [[ $COMMIT_MSG != '' ]]; then
 	echo "Committing merge to origin/master"
 	git commit --amend -m "$COMMIT_MSG" || exit 1
@@ -54,12 +54,13 @@ function gitCommandToMergeCode()
 	git push origin HEAD:master || exit 1
 }
 
-gitCommandToMergeCode
+#gitCommandToMergeCode
 
 for SUB_MODULE in $SUB_MODULES; do	
-	if [ "$SUB_MODULE" == "$DMIAMSERVICE" ]; then
+	if [ "$SUB_MODULE" != "$DMIAMSERVICE" ] && [ "$SUB_MODULE" != "$DMONBOARDING" ]; then
+	echo "inside " 
 	cd $SUB_MODULE;
-		gitCommandToMergeCode
+		#gitCommandToMergeCode
 	cd ..
 	fi
 done
