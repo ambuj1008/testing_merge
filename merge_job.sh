@@ -1,29 +1,29 @@
 #!/bin/bash
 
-#while [[ $# -gt 1 ]]; do
-#    key="$1"
-#    case $key in
-#    -d | --tag)
-#        RELEASE_TAG="$2"
-#        shift
-#        ;;
-#    *) ;;
-#    esac
-#    shift
-#done
+while [[ $# -gt 1 ]]; do
+    key="$1"
+    case $key in
+    -d | --tag)
+        RELEASE_TAG="$2"
+        shift
+        ;;
+    *) ;;
+    esac
+    shift
+done
 
-#if [[ -z $RELEASE_TAG ]]; then
-#    echo "RELEASE_TAG not provided"
-#	exit 1
-#fi
+if [[ -z $RELEASE_TAG ]]; then
+    echo "RELEASE_TAG not provided"
+	exit 1
+fi
 
 DMIAMSERVICE="dm-iam-service";
 DMONBOARDING="dm-onboarding-service";
 
 #Building Submodule List
-SUB_MODULES=$(git config --file .gitmodules --get-regexp path | awk '{ print $2 }')
+SUB_MODULES=$(git config .gitmodules --get-regexp path | awk '{ print $2 }')
 
-#git submodule sync && git submodule update --init --recursive
+git submodule sync && git submodule update --init --recursive
 
 function gitCommandToMergeCode()
 {
@@ -37,9 +37,6 @@ function gitCommandToMergeCode()
 	git merge --ff-only ${RELEASE_TAG} || exit 1
 	echo "Git log after merge:"
 	git log -n 5 || exit 1
-
-	#Pull
-	git pull origin master || exit 1
 	
 	#Commit
 	COMMIT_MSG=$(git show ${RELEASE_TAG} --pretty=%B | cut -d '"' -f2)
