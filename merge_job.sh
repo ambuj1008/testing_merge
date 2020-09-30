@@ -37,6 +37,9 @@ function gitCommandToMergeCode()
 	git merge --ff-only ${RELEASE_TAG} || exit 1
 	echo "Git log after merge:"
 	git log -n 5 || exit 1
+
+	#pull
+	git pull origin master
 	
 	#Commit
 	COMMIT_MSG=$(git show ${RELEASE_TAG} --pretty=%B | cut -d '"' -f2)
