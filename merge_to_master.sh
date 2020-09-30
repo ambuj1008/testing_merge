@@ -63,6 +63,9 @@ function gitCommandToMergeCode() {
     echo "Git log after merge:" || exit 1
     git log -n 5 || exit 1
 
+    #pull
+    git pull origin master
+
     #Commit
     COMMIT_MSG=$(git show ${RELEASE_TAG} --pretty=%B | cut -d '"' -f2)
     if [[ $COMMIT_MSG != '' ]]; then
