@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
+	<title></title>
+</head>
+<body>
+      checking tags push second test third test fourth test checking tags push second test third test fourth test
+<form  method="GET" id="signupForm">
+      <form  method="GET" id="signupForm">
+		
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+		<!-- EMAIL -->
+		<input type="test" id="email" placeholder="Email">
+
+            <button type="test" id="submit">Submit</button>
+            
+            <input type="text" id="email" placeholder="Email">
+
+            <button type="text" id="submit">Submit</button>
+            
+
+            <input type="test" id="email" placeholder="Email">
+
+            <button type="test" id="submit">Submit</button>
+            
+            <input type="text" id="email" placeholder="Email">
+
+		<button type="text" id="submit">Submit</button>
+
+	</form>
+		<script type="text/javascript">
+      	$(document).ready(function(){
+      		$('#submit').click(function(){
+                  var nameval = $('#name').val();
+      	      var emailval = $('#email').val();
+                  
+                  $.ajax({            
+                  type:'POST',
+                  url:'process.php',
+                 data: {name: nameval, status: emailval},
+                 success:function(result){
+                 alert(result);
+                 console.log(result);
+                }
+        });
+        return false;
+
+      });
+});
+	</script>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
+	<title></title>
+</head>
+<body>
+      checking tags push second test third test fourth test checking tags push second test third test fourth test
+<form  method="GET" id="signupForm">
+      <form  method="GET" id="signupForm">
+		
+
+		<!-- EMAIL -->
+		<input type="test" id="email" placeholder="Email">
+
+            <button type="test" id="submit">Submit</button>
+            
+            <input type="text" id="email" placeholder="Email">
+
+            <button type="text" id="submit">Submit</button>
+            
+
+            <input type="test" id="email" placeholder="Email">
+
+            <button type="test" id="submit">Submit</button>
+            
+            <input type="text" id="email" placeholder="Email">
+
+		<button type="text" id="submit">Submit</button>
+
+	</form>
+		<script type="text/javascript">
+      	$(document).ready(function(){
+      		$('#submit').click(function(){
+                  var nameval = $('#name').val();
+      	      var emailval = $('#email').val();
+                  
+                  $.ajax({            
+                  type:'POST',
+                  url:'process.php',
+                 data: {name: nameval, status: emailval},
+                 success:function(result){
+                 alert(result);
+                 console.log(result);
+                }
+        });
+        return false;
+
+      });
+});
+	</script>
+</body>
+</html>
