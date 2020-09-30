@@ -17,8 +17,8 @@ if [[ -z $RELEASE_TAG ]]; then
 	exit 1
 fi
 
-DMIAMSERVICE="dm-iam-service";
-DMONBOARDING="dm-onboarding-service";
+DMIAMSERVICE="iam-service";
+DMONBOARDING="onboarding-service";
 
 #Building Submodule List
 SUB_MODULES=$(git config --file .gitmodules --get-regexp path | awk '{ print $2 }')
