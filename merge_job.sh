@@ -51,7 +51,7 @@ function gitCommandToMergeCode()
 	git push origin HEAD:master || exit 1
 }
 
-gitCommandToMergeCode
+#gitCommandToMergeCode
 
 for SUB_MODULE in $SUB_MODULES; do	
 	if [ "$SUB_MODULE" != "$DMIAMSERVICE" ] && [ "$SUB_MODULE" != "$DMONBOARDING" ]; then
